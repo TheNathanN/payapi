@@ -8,6 +8,8 @@ module.exports = {
       secDarkBlue: '#1b262f',
       secPink: '#da6d97',
       secLightBlue: '#6c8294',
+      bgGreen: '#EDF3F8',
+      bgGrey: '#979797',
     },
     fontFamily: {
       serif: ['DM Serif Display', 'serif'],
