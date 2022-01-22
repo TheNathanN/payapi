@@ -4,9 +4,11 @@ import HpSVG from './components/svg/HpSVG';
 import OracleSVG from './components/svg/OracleSVG';
 import GoogleSVG from './components/svg/GoogleSVG';
 import NvidiaSVG from './components/svg/NvidiaSVG';
+import LogoSVG from './components/svg/LogoSVG';
 
 const white = '#fbfcfe';
 const green = '#1b262f';
+const pink = '#da6d97';
 
 export const svgArrayWhite = [
   <TeslaSVG color={white} />,
@@ -25,3 +27,6 @@ export const svgArrayGreen = [
   <GoogleSVG color={green} />,
   <NvidiaSVG color={green} />,
 ];
+
+export const logoWhite = <LogoSVG color={white} />;
+export const logoGreen = <LogoSVG color={green} />;
