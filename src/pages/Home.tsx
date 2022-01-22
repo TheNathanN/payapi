@@ -1,3 +1,4 @@
+import Experience from '../components/home/Experience';
 import HomeSignup from '../components/home/HomeSignup';
 import Nav from '../components/Nav';
 
@@ -12,6 +13,7 @@ const Home = () => {
       </div>
       <Nav />
       <HomeSignup />
+      <Experience />
     </div>
   );
 };

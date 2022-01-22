@@ -14,10 +14,6 @@ const SignupForm = () => {
           Schedule a Demo
         </button>
       </form>
-      <p className='text-center text-body mt-1 text-secLightBlue '>
-        Have any questions?{' '}
-        <span className='font-bold text-secBlue '>Contact Us</span>
-      </p>
     </div>
   );
 };

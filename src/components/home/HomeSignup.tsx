@@ -2,7 +2,7 @@ import SignupForm from './SignupForm';
 
 const HomeSignup = () => {
   return (
-    <div>
+    <section>
       <div className='relative flex justify-center items-center pl-9 pt-6 '>
         <img
           src='/assets/home/desktop/illustration-phone-mockup.svg'
@@ -12,13 +12,18 @@ const HomeSignup = () => {
       </div>
 
       <div>
-        <h1 className='font-serif text-h3lg text-center text-secBlue px-6 pb-4 '>
+        <h2 className='font-serif text-h3lg text-center text-secBlue px-6 pb-4 '>
           Start building with our APIs for absolutely free.
-        </h1>
+        </h2>
       </div>
 
       <SignupForm />
-    </div>
+
+      <p className='text-center text-body mt-1 text-secLightBlue '>
+        Have any questions?{' '}
+        <span className='font-bold text-secBlue '>Contact Us</span>
+      </p>
+    </section>
   );
 };
 
