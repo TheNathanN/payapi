@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SignupForm from '../SignupForm';
 
 const HomeSignup = () => {
@@ -21,7 +22,9 @@ const HomeSignup = () => {
 
       <p className='text-center text-body mt-1 text-secLightBlue '>
         Have any questions?{' '}
-        <span className='font-bold text-secBlue '>Contact Us</span>
+        <span className='font-bold text-secBlue hover:cursor-pointer hover:text-secLightBlue transition-all '>
+          <Link to='/contact'>Contact Us</Link>
+        </span>
       </p>
     </section>
   );

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import SignupForm from './SignupForm';
 import { logoWhite } from '../svg';
+import SignupForm from './SignupForm';
 import FacebookSVG from './svg/FacebookSVG';
 import TwitterSVG from './svg/TwitterSVG';
 import LinkedInSVG from './svg/LinkedInSVG';
@@ -17,17 +17,17 @@ const Footer = () => {
 
       <div className='bg-secDarkBlue overflow-hidden relative '>
         <div className='flex items-center justify-center py-8 '>
-          {logoWhite}
+          <Link to='/'>{logoWhite}</Link>
         </div>
 
         <ul className='text-center font-sans font-bold text-body text-bgGrey relative z-10 '>
-          <li className='mb-4 cursor-pointer '>
+          <li className='mb-4 cursor-pointer hover:text-primWhite transition-all '>
             <Link to='/pricing'>Pricing</Link>
           </li>
-          <li className='mb-4 cursor-pointer '>
+          <li className='mb-4 cursor-pointer hover:text-primWhite transition-all '>
             <Link to='/about'>About</Link>
           </li>
-          <li className='mb-4 cursor-pointer '>
+          <li className='mb-4 cursor-pointer hover:text-primWhite transition-all '>
             <Link to='/contact'>Contact</Link>
           </li>
         </ul>

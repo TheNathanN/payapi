@@ -26,7 +26,7 @@ const Experience = () => {
         </div>
 
         <div className='text-primWhite flex items-center justify-center py-16 '>
-          <button className='border-[1px] py-4 px-10 rounded-full font-sans font-semibold '>
+          <button className='border-[1px] py-4 px-10 rounded-full font-sans font-semibold hover:bg-primWhite hover:text-secBlue transition-all '>
             About Us
           </button>
         </div>
