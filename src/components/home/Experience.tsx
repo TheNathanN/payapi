@@ -13,7 +13,9 @@ const Experience = () => {
             alt='cirlce'
           />
         </div>
-        <CompanyList color='white' />
+        <div className='my-8'>
+          <CompanyList color='white' />
+        </div>
         <ExperienceCard title={experience.title} info={experience.info} />
         <AboutBtn />
       </div>

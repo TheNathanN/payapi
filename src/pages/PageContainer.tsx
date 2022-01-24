@@ -16,9 +16,9 @@ const PageContainer = ({ children, title }: Props) => {
         />
       </div>
       <Nav />
-      <h2 className='font-serif text-center text-h3lg text-secBlue my-8 px-4 '>
+      <h1 className='font-serif text-center text-h3lg text-secBlue my-8 px-4 '>
         {title}
-      </h2>
+      </h1>
       {children}
       <Footer />
     </div>

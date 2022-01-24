@@ -4,7 +4,7 @@ import { svgArrayWhite, svgArrayGreen } from '../svg';
 const CompanyList = ({ color }: CompanyListProps) => {
   if (color === 'white') {
     return (
-      <div className='flex flex-wrap w-full items-center justify-center mb-12 mt-16 relative '>
+      <div className='flex flex-wrap w-full items-center justify-center relative '>
         {svgArrayWhite.map(svg => (
           <div
             key={svgArrayWhite.indexOf(svg)}
@@ -19,7 +19,7 @@ const CompanyList = ({ color }: CompanyListProps) => {
 
   if (color === 'green') {
     return (
-      <div className='flex flex-wrap w-full items-center justify-center my-12 relative '>
+      <div className='flex flex-wrap w-full items-center justify-center relative '>
         {svgArrayGreen.map(svg => (
           <div
             key={svgArrayGreen.indexOf(svg)}

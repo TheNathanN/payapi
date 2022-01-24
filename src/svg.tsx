@@ -7,8 +7,7 @@ import NvidiaSVG from './components/svg/NvidiaSVG';
 import LogoSVG from './components/svg/LogoSVG';
 
 const white = '#fbfcfe';
-const green = '#1b262f';
-const pink = '#da6d97';
+const green = '#36536b';
 
 export const svgArrayWhite = [
   <TeslaSVG color={white} />,
