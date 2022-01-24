@@ -12,11 +12,9 @@ const HomeSignup = () => {
         />
       </div>
 
-      <div>
-        <h2 className='font-serif text-h3lg text-center text-secBlue px-6 pb-4 '>
-          Start building with our APIs for absolutely free.
-        </h2>
-      </div>
+      <h2 className='font-serif text-h3lg text-center text-secBlue px-6 pb-4 '>
+        Start building with our APIs for absolutely free.
+      </h2>
 
       <SignupForm />
 

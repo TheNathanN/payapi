@@ -5,7 +5,7 @@ const SignupForm = () => {
         <input
           type='text'
           placeholder='Enter email address'
-          className='focus:outline-none py-2 px-6 rounded-3xl text-sans font-bold text-body text-secBlue placeholder-secLightBlue mb-2 shadow-md '
+          className='focus:outline-none py-2 px-6 rounded-3xl text-sans font-bold text-body text-secBlue placeholder-secLightBlue placeholder-opacity-50 mb-2 shadow-md '
         />
         <button
           type='submit'

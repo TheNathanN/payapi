@@ -8,7 +8,9 @@ interface Props {
 const Feature = ({ color, feature }: Props) => {
   return (
     <div className='flex items-center  '>
-      <CheckSVG color={color} />
+      <div className='mr-4 '>
+        <CheckSVG color={color} />
+      </div>
       <p>{Object.keys(feature)}</p>
     </div>
   );
