@@ -8,13 +8,15 @@ const HomeSignup = () => {
         <img
           src='/assets/home/desktop/illustration-phone-mockup.svg'
           alt='phone mockup'
-          className='w-52 '
+          className='w-52 md:w-60 '
         />
       </div>
 
-      <h2 className='font-serif text-h3lg text-center text-secBlue px-6 pb-4 '>
-        Start building with our APIs for absolutely free.
-      </h2>
+      <div className='flex items-center justify-center'>
+        <h2 className='font-serif text-h3lg text-center text-secBlue px-6 pb-4 max-w-md md:text-h2 md:max-w-xl '>
+          Start building with our APIs for absolutely free.
+        </h2>
+      </div>
 
       <SignupForm />
 

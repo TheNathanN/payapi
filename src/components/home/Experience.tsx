@@ -7,10 +7,11 @@ const Experience = () => {
   return (
     <section className='my-16 '>
       <div className='bg-secDarkBlue overflow-hidden relative '>
-        <div className='absolute w-[780px] -top-[602px] -left-[202px] '>
+        <div className='absolute w-[780px] -top-[602px] right-1/2 translate-x-1/2 '>
           <img
             src='/assets/shared/desktop/bg-pattern-circle.svg'
             alt='cirlce'
+            className='w-full'
           />
         </div>
         <div className='my-8'>

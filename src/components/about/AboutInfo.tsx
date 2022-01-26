@@ -13,7 +13,7 @@ const AboutInfo = () => {
         />
       ))}
 
-      <div className='my-8 '>
+      <div className='my-8 flex items-center justify-center '>
         <img src='/assets/about/mobile/image-team-members.jpg' alt='a team' />
       </div>
 

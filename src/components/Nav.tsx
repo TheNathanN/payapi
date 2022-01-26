@@ -8,7 +8,26 @@ const Nav = () => {
         <div>
           <Link to='/'>{logoGreen}</Link>
         </div>
-        <div>
+
+        <ul className='hidden md:flex font-sans text-center text-secBlue font-bold text-h3sm  '>
+          <li className='hover:text-secLightBlue transition-all my-8 mx-4 '>
+            <Link to='/pricing'>Pricing</Link>
+          </li>
+          <li className='hover:text-secLightBlue transition-all my-8 mx-4 '>
+            <Link to='/about'>About</Link>
+          </li>
+          <li className='hover:text-secLightBlue transition-all my-8 mx-4 '>
+            <Link to='/contact'>Contact</Link>
+          </li>
+        </ul>
+
+        <div className='hidden md:flex items-center justify-center'>
+          <button className='bg-primPink hover:bg-secPink transition-all text-center text-primWhite rounded-3xl text-sans font-semibold px-10 py-3 text-body my-2 '>
+            Schedule a Demo
+          </button>
+        </div>
+
+        <div className='md:hidden '>
           <img src='/assets/shared/mobile/menu.svg' alt='menu logo' />
         </div>
       </div>

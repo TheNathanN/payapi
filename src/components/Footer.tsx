@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className='absolute w-[780px] top-[177px] -left-[202px] '>
+        <div className='absolute w-[780px] top-[177px] right-1/2 translate-x-1/2 '>
           <img
             src='/assets/shared/desktop/bg-pattern-circle.svg'
             alt='circle'

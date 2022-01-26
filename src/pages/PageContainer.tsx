@@ -9,7 +9,7 @@ interface Props {
 const PageContainer = ({ children, title }: Props) => {
   return (
     <div>
-      <div className='absolute w-[780px] -top-[644px] left-[74px]  '>
+      <div className='absolute w-[780px] -top-[644px] right-1/4 translate-x-3/4  '>
         <img
           src='/assets/shared/desktop/bg-pattern-circle.svg'
           alt='a circle'
