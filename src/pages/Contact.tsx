@@ -6,7 +6,7 @@ const Contact = () => {
   const title = "Submit a help request and we'll get in touch shortly.";
   return (
     <PageContainer title={title}>
-      <section>
+      <section className='flex flex-col items-center justify-center '>
         <ContactForm />
         <Partners />
       </section>

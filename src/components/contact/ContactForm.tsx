@@ -6,7 +6,7 @@ const ContactForm = () => {
   return (
     <form
       action='submit'
-      className='flex flex-col items-center justify-center '
+      className='flex flex-col items-center justify-center max-w-lg '
     >
       <input
         type='text'

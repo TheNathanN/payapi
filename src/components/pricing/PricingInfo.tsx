@@ -5,7 +5,7 @@ import RequestBtn from './RequestBtn';
 const PricingInfo = () => {
   return (
     <section>
-      <div>
+      <div className='md:flex md:mx-4 md:mb-16 '>
         {plans.map(plan => (
           <div
             key={plans.indexOf(plan)}

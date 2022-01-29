@@ -8,11 +8,11 @@ import Nav from '../components/Nav';
 const Home = () => {
   return (
     <div>
-      <div className='absolute w-[780px] -top-[550px] right-1/2 translate-x-1/2 md:w-[949px] md:-top-[663px] '>
+      <div className='absolute w-[780px] -top-[550px] right-1/2 translate-x-1/2 md:w-[949px] md:-top-[663px] lg:w-[800px] lg:-top-[172px] lg:right-1/4 lg:translate-x-3/4 '>
         <img
           src='/assets/shared/desktop/bg-pattern-circle.svg'
           alt='a circle'
-          className='w-full'
+          className='w-full '
         />
       </div>
 

@@ -24,14 +24,14 @@ export const benefits: CardInfo[] = [
     info: "Our API comes with just a few lines of code. You'll be up and running in no time. We built our documentation page to integrate payments functionality with ease.",
     image: '/assets/home/desktop/illustration-easy-to-implement.svg',
     imgAlt: 'a page of code',
-    imgStyling: 'ml-6 ',
+    imgStyling: 'ml-7 w-full ',
   },
   {
     title: 'Simple UI & UX',
     info: "Our pre-built form is easy to integrate in your app or website's checkout flow and designed to optimize conversion.",
     image: '/assets/home/desktop/illustration-simple-ui.svg',
     imgAlt: '2 phones showing the ui/ux of the pay api app',
-    imgStyling: 'ml-5 mt-2 ',
+    imgStyling: 'ml-6 mt-2 ',
   },
 ];
 

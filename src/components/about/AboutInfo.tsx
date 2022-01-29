@@ -14,10 +14,19 @@ const AboutInfo = () => {
       ))}
 
       <div className='my-8 flex items-center justify-center '>
-        <img src='/assets/about/mobile/image-team-members.jpg' alt='a team' />
+        <img
+          src='/assets/about/mobile/image-team-members.jpg'
+          alt='a team'
+          className='md:hidden'
+        />
+        <img
+          src='/assets/about/tablet/image-team-members.jpg'
+          alt='a team'
+          className='sm:hidden md:block '
+        />
       </div>
 
-      <div className='border-y-[1px] border-y-secBlue border-opacity-40 mx-4 flex flex-col items-center justify-center '>
+      <div className='border-y-[1px] border-y-secBlue border-opacity-40 mx-4 flex flex-col items-center justify-center md:border-none md:flex-row md:mx-8 md:my-16 '>
         {stats.map(stat => (
           <StatsCard
             key={stats.indexOf(stat)}
