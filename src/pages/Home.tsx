@@ -1,7 +1,7 @@
-import Benefits from '../components/home/Benefits';
-import Experience from '../components/home/Experience';
-import Features from '../components/home/Features';
 import HomeSignup from '../components/home/HomeSignup';
+import Experience from '../components/home/Experience';
+import Benefits from '../components/home/Benefits';
+import Features from '../components/home/Features';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 

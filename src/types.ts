@@ -12,4 +12,5 @@ export interface CardInfo {
   image?: string;
   imgAlt?: string;
   imgStyling?: string;
+  direction?: 'left' | 'right';
 }
