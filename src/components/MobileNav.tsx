@@ -6,7 +6,7 @@ interface Props {
 
 const MobileNav = ({ setMobileNav }: Props) => {
   return (
-    <div className='bg-secDarkBlue min-h-screen w-10/12 absolute z-10 right-0 py-4 px-4 '>
+    <div className='bg-secDarkBlue min-h-screen w-10/12 absolute z-10 right-0 py-4 px-4 md:hidden '>
       <div
         className='border-b-[1px] border-bgGrey flex justify-end py-4 mb-8 '
         onClick={() => setMobileNav(false)}

@@ -5,20 +5,32 @@ import ExperienceCard from './ExperienceCard';
 
 const Experience = () => {
   return (
-    <section className='my-16 '>
-      <div className='bg-secDarkBlue overflow-hidden relative '>
-        <div className='absolute w-[780px] -top-[602px] right-1/2 translate-x-1/2 md:-top-[548px] '>
+    <section className='my-16 bg-secDarkBlue overflow-hidden relative '>
+      <div className='lg:flex lg:px-[10%] lg:py-[7%] lg:justify-center lg:items-center '>
+        {/* Background Circle */}
+        <div className='absolute w-[780px] -top-[602px] right-1/2 translate-x-1/2 md:-top-[548px] lg:-top-[359px] lg:-left-[50%] '>
           <img
             src='/assets/shared/desktop/bg-pattern-circle.svg'
             alt='cirlce'
             className='w-full '
           />
         </div>
-        <div className='my-8 flex items-center justify-center '>
+
+        {/* Tablet & Mobile Layout */}
+        <div className='my-8 flex items-center justify-center lg:hidden '>
           <CompanyList color='white' />
         </div>
-        <ExperienceCard title={experience.title} info={experience.info} />
-        <AboutBtn />
+
+        {/* Experience Card for both Layouts */}
+        <div className='px-4 lg:w-[40%] '>
+          <ExperienceCard title={experience.title} info={experience.info} />
+          <AboutBtn />
+        </div>
+
+        {/* Desktop Layout */}
+        <div className='hidden lg:my-8 lg:flex lg:items-center lg:justify-end lg:w-[60%] '>
+          <CompanyList color='white' />
+        </div>
       </div>
     </section>
   );

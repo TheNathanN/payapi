@@ -4,12 +4,14 @@ import FooterNav from './FooterNav';
 
 const Footer = () => {
   return (
-    <footer>
-      <div className='mb-14 md:mb-32 '>
+    <footer className='w-full flex flex-col items-center justify-center'>
+      <div className='mb-14 md:mb-32 w-full max-w-lg'>
         <h2 className='text-center font-serif text-secBlue text-h4 my-6 md:text-h2 md:my-9 '>
           Ready to start?
         </h2>
-        <SignupForm />
+        <div className='px-8 '>
+          <SignupForm />
+        </div>
       </div>
       <FooterNav />
     </footer>

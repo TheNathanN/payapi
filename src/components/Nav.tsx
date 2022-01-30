@@ -4,19 +4,19 @@ import { logoGreen } from '../svg';
 const Nav = () => {
   return (
     <nav className='md:mx-2'>
-      <div className='flex justify-between items-center pt-9 px-5 relative lg:px-16 '>
+      <div className='flex justify-between items-center pt-9 px-5 relative lg:px-[10%] '>
         <div>
           <Link to='/'>{logoGreen}</Link>
         </div>
 
         <ul className='hidden md:flex font-sans text-center text-secBlue font-bold text-h3sm  '>
-          <li className='hover:text-secLightBlue transition-all my-8 mx-5 '>
+          <li className='hover:text-secLightBlue transition-all my-8 mx-5 lg:mx-3 '>
             <Link to='/pricing'>Pricing</Link>
           </li>
-          <li className='hover:text-secLightBlue transition-all my-8 mx-5 '>
+          <li className='hover:text-secLightBlue transition-all my-8 mx-5 lg:mx-3 '>
             <Link to='/about'>About</Link>
           </li>
-          <li className='hover:text-secLightBlue transition-all my-8 mx-5 '>
+          <li className='hover:text-secLightBlue transition-all my-8 mx-5 lg:mx-3 '>
             <Link to='/contact'>Contact</Link>
           </li>
         </ul>

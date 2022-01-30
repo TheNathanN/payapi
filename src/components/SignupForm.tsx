@@ -1,9 +1,9 @@
 const SignupForm = () => {
   return (
-    <div className='flex items-center justify-center my-2 '>
+    <div className='w-full flex items-center justify-center lg:items-center lg:justify-start '>
       <form
         action=''
-        className='flex flex-col items-center px-6 w-full max-w-md md:relative md:px-0 '
+        className='flex flex-col items-center w-full md:relative md:px-0 '
       >
         <input
           type='text'

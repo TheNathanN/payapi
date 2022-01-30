@@ -14,7 +14,7 @@ const App = () => {
     <div
       className={
         mobileNav
-          ? 'h-screen w-screen overflow-hidden bg-bgGreen relative '
+          ? 'h-screen w-screen overflow-hidden bg-bgGreen relative md:h-full '
           : 'bg-bgGreen min-h-screen relative overflow-hidden '
       }
     >
