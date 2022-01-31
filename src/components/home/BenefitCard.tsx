@@ -5,7 +5,7 @@ const BenefitCard = ({ title, info, image, imgAlt, imgStyling, direction }: Card
     <div>
       {/* The direction prop determines which div to show with the desktop display */}
       {direction === 'left' ? (
-        <div className='flex flex-col items-center justify-center lg:flex-row lg:px-[10%] lg:justify-between '>
+        <div className='flex flex-col items-center justify-center relative lg:flex-row lg:px-[10%] lg:justify-between '>
           <div className='flex justify-center items-center max-w-md '>
             <img src={image} alt={imgAlt} className={imgStyling} />
           </div>
@@ -22,7 +22,7 @@ const BenefitCard = ({ title, info, image, imgAlt, imgStyling, direction }: Card
       ) : ''}
 
       {direction === 'right' ? (
-        <div className='flex flex-col items-center justify-center lg:flex-row lg:px-[10%] lg:justify-between '>
+        <div className='flex flex-col items-center justify-center relative lg:flex-row lg:px-[10%] lg:justify-between '>
           {/* This image shows while in Tablet/Mobile display */}
           <div className='flex justify-center items-center max-w-md lg:hidden '>
             <img src={image} alt={imgAlt} className={imgStyling} />

@@ -3,7 +3,7 @@ import { logoGreen } from '../svg';
 
 const Nav = () => {
   return (
-    <nav className='md:mx-2'>
+    <nav className='md:mx-2 w-full max-w-[1440px] relative z-10 '>
       <div className='flex justify-between items-center pt-9 px-5 relative lg:px-[10%] '>
         <div>
           <Link to='/'>{logoGreen}</Link>

@@ -7,7 +7,7 @@ import LinkedInSVG from './svg/LinkedInSVG';
 
 const FooterNav = () => {
   return (
-    <div className='w-full bg-secDarkBlue overflow-hidden relative md:flex md:items-center md:justify-between '>
+    <div className='w-full max-w-[1440px] overflow-hidden relative md:flex md:items-center md:justify-between '>
       <div className='flex items-center justify-center py-8 md:ml-8 '>
         <Link to='/'>{logoWhite}</Link>
       </div>

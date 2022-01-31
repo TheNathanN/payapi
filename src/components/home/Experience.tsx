@@ -5,7 +5,7 @@ import ExperienceCard from './ExperienceCard';
 
 const Experience = () => {
   return (
-    <section className='my-16 bg-secDarkBlue overflow-hidden relative '>
+    <div className='w-full max-w-[1440px] '>
       <div className='lg:flex lg:px-[10%] lg:py-[7%] lg:justify-center lg:items-center '>
         {/* Background Circle */}
         <div className='absolute w-[780px] -top-[602px] right-1/2 translate-x-1/2 md:-top-[548px] lg:-top-[359px] lg:-left-[50%] '>
@@ -32,7 +32,7 @@ const Experience = () => {
           <CompanyList color='white' />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

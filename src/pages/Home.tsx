@@ -8,20 +8,30 @@ import Nav from '../components/Nav';
 const Home = () => {
   return (
     <div>
-      <div className='absolute w-[780px] -top-[550px] right-1/2 translate-x-1/2 md:w-[949px] md:-top-[663px] lg:w-[800px] lg:-top-[172px] lg:right-1/4 lg:translate-x-3/4 '>
-        <img
-          src='/assets/shared/desktop/bg-pattern-circle.svg'
-          alt='a circle'
-          className='w-full '
-        />
+      <div className='flex items-center justify-center '>
+        <Nav />
       </div>
 
-      <Nav />
-      <HomeSignup />
-      <Experience />
-      <Benefits />
-      <Features />
-      <Footer />
+      <section className='flex items-center justify-center '>
+        <HomeSignup />
+      </section>
+
+      <section className='flex items-center justify-center my-16 bg-secDarkBlue overflow-hidden relative  '>
+        <Experience />
+      </section>
+
+      <section className='flex items-center justify-center '>
+        <Benefits />
+      </section>
+
+      <section className='flex items-center justify-center '>
+        <Features />
+      </section>
+
+      <div className='flex items-center justify-center '>
+        <Footer />
+      </div>
+
     </div>
   );
 };

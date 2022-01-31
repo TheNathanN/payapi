@@ -3,7 +3,15 @@ import SignupTabMob from './tablet-mobile/SignupTabMob';
 
 const HomeSignup = () => {
   return (
-    <section className='w-full flex flex-col items-center justify-center lg:flex-row  '>
+    <div className='w-full max-w-[1440px] flex flex-col items-center justify-center lg:flex-row '>
+      <div className='absolute w-[780px] -top-[550px] right-1/2 translate-x-1/2 md:w-[949px] md:-top-[663px] lg:w-[800px] lg:-top-[172px] lg:right-1/4 lg:translate-x-3/4 '>
+        <img
+          src='/assets/shared/desktop/bg-pattern-circle.svg'
+          alt='a circle'
+          className='w-full '
+        />
+      </div>
+
       {/* Desktop Layout */}
       <SignupDesktop />
 
@@ -18,7 +26,7 @@ const HomeSignup = () => {
 
       {/* Tablet & Mobile Layout */}
       <SignupTabMob />
-    </section>
+    </div>
   );
 };
 
