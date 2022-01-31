@@ -4,19 +4,19 @@ import RequestBtn from './RequestBtn';
 
 const PricingInfo = () => {
   return (
-    <section>
-      <div className='md:flex md:mx-4 md:mb-16 '>
+    <section className='max-w-[1440px] '>
+      <div className='md:flex md:mx-4 md:mb-16 lg:m-0 lg:px-[10%] '>
         {plans.map(plan => (
           <div
             key={plans.indexOf(plan)}
-            className='flex flex-col justify-center items-center text-center mb-8 px-4 w-full '
+            className='flex flex-col justify-center items-center text-center mb-8 px-4 w-full md:w-1/3 lg:text-left lg:mb-16 '
           >
-            <h3 className='font-serif text-h4 text-primPink '>{plan.title}</h3>
+            <h3 className='font-serif text-h4 text-primPink w-full '>{plan.title}</h3>
             <p className='my-4 text-body text-secLightBlue font-sans font-thin '>
               {plan.description}
             </p>
-            <p className='font-serif text-secBlue text-h2 '>{plan.price}</p>
-            <ul className='border-y-[1px] border-secBlue border-opacity-40 my-4 py-4  w-full flex flex-col items-center '>
+            <p className='font-serif text-secBlue text-h2 w-full '>{plan.price}</p>
+            <ul className='border-y-[1px] border-secBlue border-opacity-40 my-4 py-4  w-full flex flex-col items-center lg:items-start '>
               {plan.features.map(feature => (
                 <li
                   key={plan.features.indexOf(feature)}
@@ -35,7 +35,7 @@ const PricingInfo = () => {
               ))}
             </ul>
 
-            <div className='my-4 '>
+            <div className='my-4 w-full lg:flex lg:items-start '>
               <RequestBtn />
             </div>
           </div>

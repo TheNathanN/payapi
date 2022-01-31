@@ -1,6 +1,6 @@
 const SignupForm = () => {
   return (
-    <div className='w-full flex items-center justify-center lg:items-center lg:justify-start '>
+    <div className='w-full flex items-center justify-center '>
       <form
         action=''
         className='flex flex-col items-center w-full md:relative md:px-0 '

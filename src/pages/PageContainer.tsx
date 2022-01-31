@@ -8,8 +8,8 @@ interface Props {
 
 const PageContainer = ({ children, title }: Props) => {
   return (
-    <div>
-      <div className='absolute w-[780px] -top-[644px] right-1/4 translate-x-3/4 md:-top-[464px] md:right-[15%] '>
+    <div className='w-full lg:flex lg:flex-col lg:items-center' >
+      <div className='absolute w-[780px] -top-[644px] right-1/4 translate-x-3/4 md:-top-[464px] md:right-[15%] lg:-top-[527px] lg:right-[40%] '>
         <img
           src='/assets/shared/desktop/bg-pattern-circle.svg'
           alt='a circle'
@@ -18,8 +18,8 @@ const PageContainer = ({ children, title }: Props) => {
 
       <Nav />
 
-      <div className='flex flex-col items-center justify-center'>
-        <h1 className='font-serif text-center text-h3lg text-secBlue my-8 px-4 max-w-xl md:text-h2 md:my-12 '>
+      <div className='w-full max-w-[1440px] flex flex-col items-center justify-center lg:items-start '>
+        <h1 className='font-serif text-center text-h3lg text-secBlue my-8 px-4 max-w-xl md:text-h2 md:my-12 lg:px-[10%] '>
           {title}
         </h1>
       </div>
