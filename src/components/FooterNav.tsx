@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { logoWhite } from '../svg';
-import SignupForm from './SignupForm';
 import FacebookSVG from './svg/FacebookSVG';
 import TwitterSVG from './svg/TwitterSVG';
 import LinkedInSVG from './svg/LinkedInSVG';
