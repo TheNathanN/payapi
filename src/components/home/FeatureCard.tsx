@@ -6,7 +6,7 @@ interface Props {
 
 const FeatureCard = ({ feature }: Props) => {
   return (
-    <div className='flex flex-col items-center md:w-1/3 '>
+    <div className=' w-full flex flex-col items-center justify-center '>
       <div className='flex items-center justify-center my-12 '>
         <img src={feature.image} alt='icon' className='mb-2 ' />
       </div>

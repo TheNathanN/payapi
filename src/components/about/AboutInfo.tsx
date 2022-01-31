@@ -22,11 +22,16 @@ const AboutInfo = () => {
         <img
           src='/assets/about/tablet/image-team-members.jpg'
           alt='a team'
-          className='sm:hidden md:block '
+          className='sm:hidden md:block lg:hidden '
+        />
+        <img
+          src='/assets/about/desktop/image-team-members.jpg'
+          alt='a team'
+          className='sm:hidden lg:block '
         />
       </div>
 
-      <div className='border-y-[1px] border-y-secBlue border-opacity-40 mx-4 flex flex-col items-center justify-center md:border-none md:flex-row md:mx-8 md:my-16 '>
+      <div className='max-w-[1440px] border-y-[1px] border-y-secBlue border-opacity-40 mx-4 flex flex-col items-center justify-center md:border-none md:flex-row md:mx-8 md:my-16 lg:px-[10%] '>
         {stats.map(stat => (
           <StatsCard
             key={stats.indexOf(stat)}

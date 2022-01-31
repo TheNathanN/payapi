@@ -19,7 +19,7 @@ const PageContainer = ({ children, title }: Props) => {
       <Nav />
 
       <div className='w-full max-w-[1440px] flex flex-col items-center justify-center lg:items-start '>
-        <h1 className='font-serif text-center text-h3lg text-secBlue my-8 px-4 max-w-xl md:text-h2 md:my-12 lg:px-[10%] '>
+        <h1 className='w-3/4 font-serif text-center text-h3lg text-secBlue my-8 px-4 md:text-h2 md:my-12 lg:px-[10%] lg:text-left '>
           {title}
         </h1>
       </div>

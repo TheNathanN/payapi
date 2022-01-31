@@ -5,7 +5,7 @@ interface Props {
 
 const AboutCard = ({ title, info }: Props) => {
   return (
-    <div className='text-center px-4 md:flex md:my-8 md:px-8 md:text-left '>
+    <div className='max-w-[1440px] text-center px-4 md:flex md:my-8 md:px-8 md:text-left lg:px-[10%] '>
       <h2 className='font-serif text-h3sm text-secBlue mt-8 mb-4 md:text-h3lg md:w-1/3 md:flex md:items-start md:my-0 '>
         {title}
       </h2>
