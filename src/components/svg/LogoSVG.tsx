@@ -1,4 +1,4 @@
-import { SVGProps } from '../../types';
+import { SVGProps } from '../../app/types';
 
 const LogoSVG = ({ color }: SVGProps) => {
   return (

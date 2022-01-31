@@ -1,4 +1,4 @@
-import { experience } from '../../companyData';
+import { experience } from '../../app/companyData';
 import CompanyList from '../CompanyList';
 import AboutBtn from './AboutBtn';
 import ExperienceCard from './ExperienceCard';

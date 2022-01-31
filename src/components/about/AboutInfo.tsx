@@ -1,4 +1,4 @@
-import { ourAboutInfo, theAboutInfo, stats } from '../../companyData';
+import { ourAboutInfo, theAboutInfo, stats } from '../../app/companyData';
 import AboutCard from './AboutCard';
 import StatsCard from './StatsCard';
 

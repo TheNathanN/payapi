@@ -1,4 +1,4 @@
-import { checked, plans } from '../../companyData';
+import { checked, plans } from '../../app/companyData';
 import Feature from './Feature';
 import RequestBtn from './RequestBtn';
 

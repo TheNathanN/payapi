@@ -1,4 +1,4 @@
-import { CardInfo } from '../../types';
+import { CardInfo } from '../../app/types';
 
 interface Props {
   feature: CardInfo;

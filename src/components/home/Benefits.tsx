@@ -1,4 +1,4 @@
-import { benefits } from '../../companyData';
+import { benefits } from '../../app/companyData';
 import BenefitCard from './BenefitCard';
 
 const Benefits = () => {

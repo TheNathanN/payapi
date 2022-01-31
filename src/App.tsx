@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useAppSelector } from './app/hooks';
 // Pages
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import MobileNav from './components/MobileNav';
 
 const App = () => {
-  const [mobileNav, setMobileNav] = useState(false);
+  const mobileNav = useAppSelector(state => state.mobileNav.openNav);
 
   return (
     <div
@@ -18,7 +18,7 @@ const App = () => {
           : 'bg-bgGreen min-h-screen relative overflow-hidden '
       }
     >
-      {mobileNav ? <MobileNav setMobileNav={setMobileNav} /> : ''}
+      {mobileNav ? <MobileNav /> : ''}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/pricing' element={<Pricing />} />

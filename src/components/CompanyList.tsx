@@ -1,4 +1,4 @@
-import { CompanyListProps } from '../types';
+import { CompanyListProps } from '../app/types';
 import { svgArrayWhite, svgArrayGreen } from '../svg';
 
 const CompanyList = ({ color }: CompanyListProps) => {

@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import { logoGreen } from '../svg';
+import { toggle } from '../app/reduxSlices/mobileNavSlice';
+import { useAppDispatch } from '../app/hooks';
 
 const Nav = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <nav className='md:mx-2 w-full max-w-[1440px] relative z-10 '>
       <div className='flex justify-between items-center pt-9 px-5 relative lg:px-[10%] '>
@@ -27,7 +31,7 @@ const Nav = () => {
           </button>
         </div>
 
-        <div className='md:hidden '>
+        <div onClick={() => dispatch(toggle(true))} className='md:hidden '>
           <img src='/assets/shared/mobile/menu.svg' alt='menu logo' />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { CardInfo } from '../../types';
+import { CardInfo } from '../../app/types';
 
 const BenefitCard = ({ title, info, image, imgAlt, imgStyling, direction }: CardInfo) => {
   return (

@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useAppDispatch } from '../app/hooks';
+import { toggle } from '../app/reduxSlices/mobileNavSlice';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 
@@ -7,6 +10,12 @@ interface Props {
 }
 
 const PageContainer = ({ children, title }: Props) => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(toggle(false))
+  }, [dispatch])
+
   return (
     <div className='w-full lg:flex lg:flex-col lg:items-center' >
       <div className='absolute w-[780px] -top-[644px] right-1/4 translate-x-3/4 md:-top-[464px] md:right-[15%] lg:-top-[527px] lg:right-[40%] '>
