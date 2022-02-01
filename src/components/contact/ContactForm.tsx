@@ -1,15 +1,42 @@
 import React, { useState } from 'react';
 import CheckSVG from '../svg/CheckSVG'
 
+interface FormData {
+  name: string;
+  email: string;
+  company: string;
+  title: string;
+  message: string;
+  'marketing-list': string;
+
+}
+
 const ContactForm = () => {
   const [submitting, setSubmitting] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    company: '',
+    title: '',
+    message: '',
+    'marketing-list': ''
+  });
+
+  const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    e.preventDefault();
+    setFormData({
+      ...formData,
+      [e.currentTarget.name]: e.currentTarget.value
+    });
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
 
     setTimeout(() => {
       setSubmitting(false);
-      alert('You have submited the form');
+      alert('Form has been submitted');
     }, 3000)
   }
 
@@ -24,6 +51,7 @@ const ContactForm = () => {
         placeholder='Name'
         name='name'
         id='name'
+        onChange={handleChange}
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
       <input
@@ -31,6 +59,7 @@ const ContactForm = () => {
         placeholder='Email Address'
         name='email'
         id='email'
+        onChange={handleChange}
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
       <input
@@ -38,6 +67,7 @@ const ContactForm = () => {
         placeholder='Company Name'
         name='company'
         id='company'
+        onChange={handleChange}
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
       <input
@@ -45,6 +75,7 @@ const ContactForm = () => {
         placeholder='Title'
         name='title'
         id='title'
+        onChange={handleChange}
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
       <textarea
@@ -53,11 +84,13 @@ const ContactForm = () => {
         cols={30}
         rows={3}
         placeholder='Message'
+        onChange={handleChange}
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
 
       <div className='flex items-center justify-start w-11/12 '>
-        <input name='marketing-list' id='marketing-list' type='checkbox' className='opacity-0 w-6 h-6 absolute ' />
+        <input name='marketing-list' value='checked' id='marketing-list' type='checkbox'
+          onChange={handleChange} className='opacity-0 w-6 h-6 absolute ' />
 
         <div className="w-6 h-6 bg-secBlue bg-opacity-30 mr-4 flex items-center justify-center ">
           <div className='hidden '>
