@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input:checked + div {
+  @apply bg-primPink;
+}
+input:checked + div > div {
+  @apply flex;
+}
