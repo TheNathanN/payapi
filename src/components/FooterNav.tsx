@@ -25,13 +25,19 @@ const FooterNav = () => {
 
       <div className='flex items-center justify-center pt-4 pb-9 relative z-10 md:py-0 md:mr-2 '>
         <div className='mx-4'>
-          <FacebookSVG />
+          <a href="https://facebook.com" target='_blank' rel='noreferrer'>
+            <FacebookSVG />
+          </a>
         </div>
         <div className='mx-4'>
-          <TwitterSVG />
+          <a href="https://twitter.com" target='_blank' rel='noreferrer'>
+            <TwitterSVG />
+          </a>
         </div>
         <div className='mx-4'>
-          <LinkedInSVG />
+          <a href="https://linkedin.com" target='_blank' rel='noreferrer'>
+            <LinkedInSVG />
+          </a>
         </div>
       </div>
 
