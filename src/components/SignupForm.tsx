@@ -1,11 +1,10 @@
-import React, { InputHTMLAttributes, useState } from 'react';
+import React, { useState } from 'react';
 
 interface FormData {
   email: string;
 }
 
 const SignupForm = () => {
-  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     email: ''
   });
@@ -13,17 +12,15 @@ const SignupForm = () => {
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
 
-    setSubmitting(true);
-
     setTimeout(() => {
-      setSubmitting(false);
       alert('Form has been submitted');
     }, 3000)
   }
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     setFormData({
-      email: e.currentTarget.value
+      ...formData,
+      [e.currentTarget.name]: e.currentTarget.value
     })
   }
 
@@ -36,6 +33,7 @@ const SignupForm = () => {
         <input
           type='email'
           placeholder='Enter email address'
+          name='email'
           onChange={changeHandler}
           className='focus:outline-none py-2 px-6 rounded-3xl text-sans font-bold text-body text-secBlue placeholder-secLightBlue placeholder-opacity-50 mb-2 shadow-md w-full  '
         />
