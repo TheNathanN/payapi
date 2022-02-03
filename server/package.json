@@ -7,11 +7,14 @@
     "build": "tsc",
     "watch": "tsc -w",
     "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts"
+    "server": "nodemon src/index.ts",
+    "client": "cd ../client && yarn start",
+    "dev": "concurrently \"yarn watch\" \"yarn server\" \"yarn client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^7.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "pg": "^8.7.1"
