@@ -2,14 +2,16 @@ import mysql from 'mysql2';
 import 'dotenv/config';
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  database: 'node-complete',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database: process.env.DB_DATABASE,
   password: process.env.DB_PW,
 });
 
 interface Contacts {
-  viewAll: () => Promise<
+  addDemo: (
+    email: string
+  ) => Promise<
     | mysql.RowDataPacket[]
     | mysql.RowDataPacket[][]
     | mysql.OkPacket
@@ -18,7 +20,11 @@ interface Contacts {
   >;
 
   addContact: (
-    email: string
+    name: string,
+    email: string,
+    company: string,
+    title?: string,
+    message?: string
   ) => Promise<
     | mysql.RowDataPacket[]
     | mysql.RowDataPacket[][]
@@ -29,24 +35,35 @@ interface Contacts {
 }
 
 const contacts: Contacts = {
-  viewAll: () => {
-    return new Promise((resolve, reject) => {
-      pool.query(`SELECT * FROM contacts`, (err, results) => {
-        if (err) {
-          return reject(err);
-        }
-        return resolve(results);
-      });
-    });
-  },
-  addContact: (email: string) => {
+  addDemo: (email: string) => {
     return new Promise((resolve, reject) => {
       pool.query(
-        `
-        INSERT INTO contacts (email)
-        VALUES(?);
+        `INSERT INTO demo_form (email) 
+        VALUES (?);`,
+        [email],
+        (err, results) => {
+          if (err) {
+            return reject(err);
+          }
+          return resolve(results);
+        }
+      );
+    });
+  },
+
+  addContact: (
+    name: string,
+    email: string,
+    company: string,
+    title?: string,
+    message?: string
+  ) => {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `INSERT INTO contact_form (name, email, company, title, message) 
+        VALUES (?, ?, ?, ?, ?);
         `,
-        email,
+        [name, email, company, title, message],
         (err, results) => {
           if (err) {
             return reject(err);
