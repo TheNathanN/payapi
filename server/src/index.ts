@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import db from './database';
 
 const app = express();
 const port = 5000;
@@ -7,7 +8,7 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello');
 });
 
