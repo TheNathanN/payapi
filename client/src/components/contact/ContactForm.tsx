@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import CheckSVG from '../svg/CheckSVG'
 
 interface FormData {
   name: string;
   email: string;
   company: string;
-  title: string;
-  message: string;
-  'marketing-list': string;
-
+  marketing: string;
+  title?: string;
+  message?: string;
 }
 
 const ContactForm = () => {
@@ -17,9 +17,9 @@ const ContactForm = () => {
     name: '',
     email: '',
     company: '',
-    title: '',
-    message: '',
-    'marketing-list': ''
+    marketing: '',
+    title: undefined,
+    message: undefined,
   });
 
   const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,14 +30,19 @@ const ContactForm = () => {
     });
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
 
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      const submittedData = await axios.post('/contactForm', formData);
+      console.log(submittedData);
       alert('Form has been submitted');
-    }, 3000)
+    } catch (err) {
+      console.log(err);
+    }
+
+    setSubmitting(false);
   }
 
   return (
@@ -89,7 +94,7 @@ const ContactForm = () => {
       />
 
       <div className='flex items-center justify-start w-11/12 '>
-        <input name='marketing-list' value='checked' id='marketing-list' type='checkbox'
+        <input name='marketing' value='checked' id='marketing' type='checkbox'
           onChange={handleChange} className='opacity-0 w-6 h-6 absolute ' />
 
         <div className="w-6 h-6 bg-secBlue bg-opacity-30 mr-4 flex items-center justify-center ">
@@ -98,7 +103,7 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <label htmlFor='marketing-list' className='w-10/12 text-body  text-secBlue font-sans '>
+        <label htmlFor='marketing' className='w-10/12 text-body  text-secBlue font-sans '>
           Stay up-to-date with company announcements and updates to our API
         </label>
       </div>

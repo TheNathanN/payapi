@@ -23,6 +23,7 @@ interface Contacts {
     name: string,
     email: string,
     company: string,
+    marketing: string,
     title?: string,
     message?: string
   ) => Promise<
@@ -35,7 +36,7 @@ interface Contacts {
 }
 
 const contacts: Contacts = {
-  addDemo: (email: string) => {
+  addDemo: email => {
     return new Promise((resolve, reject) => {
       pool.query(
         `INSERT INTO demo_form (email) 
@@ -51,19 +52,13 @@ const contacts: Contacts = {
     });
   },
 
-  addContact: (
-    name: string,
-    email: string,
-    company: string,
-    title?: string,
-    message?: string
-  ) => {
+  addContact: (name, email, company, marketing, title?, message?) => {
     return new Promise((resolve, reject) => {
       pool.query(
-        `INSERT INTO contact_form (name, email, company, title, message) 
-        VALUES (?, ?, ?, ?, ?);
+        `INSERT INTO contact_form (name, email, company, marketing, title, message) 
+        VALUES (?, ?, ?, ?, ?, ?);
         `,
-        [name, email, company, title, message],
+        [name, email, company, marketing, title, message],
         (err, results) => {
           if (err) {
             return reject(err);

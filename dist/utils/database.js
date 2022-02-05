@@ -22,9 +22,9 @@ var contacts = {
             });
         });
     },
-    addContact: function (name, email, company, title, message) {
+    addContact: function (name, email, company, marketing, title, message) {
         return new Promise(function (resolve, reject) {
-            pool.query("INSERT INTO contact_form (name, email, company, title, message) \n        VALUES (?, ?, ?, ?, ?);\n        ", [name, email, company, title, message], function (err, results) {
+            pool.query("INSERT INTO contact_form (name, email, company, marketing, title, message) \n        VALUES (?, ?, ?, ?, ?, ?);\n        ", [name, email, company, marketing, title, message], function (err, results) {
                 if (err) {
                     return reject(err);
                 }
