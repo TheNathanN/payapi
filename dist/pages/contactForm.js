@@ -43,16 +43,15 @@ var express_1 = __importDefault(require("express"));
 var database_1 = __importDefault(require("../utils/database"));
 var router = express_1.default.Router();
 router.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, name, email, company, title, message, data, err_1;
+    var _a, name, email, company, marketing, title, message, data, err_1;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
-                _a = req.body, name = _a.name, email = _a.email, company = _a.company, title = _a.title, message = _a.message;
+                _a = req.body, name = _a.name, email = _a.email, company = _a.company, marketing = _a.marketing, title = _a.title, message = _a.message;
                 _b.label = 1;
             case 1:
                 _b.trys.push([1, 3, , 4]);
-                console.log(req.body);
-                return [4 /*yield*/, database_1.default.addContact(name, email, company, title, message)];
+                return [4 /*yield*/, database_1.default.addContact(name, email, company, marketing, title, message)];
             case 2:
                 data = _b.sent();
                 res.status(201).send(data);

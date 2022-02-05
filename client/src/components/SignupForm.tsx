@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 interface FormData {
   email: string;
@@ -9,12 +10,17 @@ const SignupForm = () => {
     email: ''
   });
 
-  const submitHandler = (e: React.FormEvent) => {
+  const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setTimeout(() => {
-      alert('Form has been submitted');
-    }, 3000)
+    try {
+      const submittedData = await axios.post('http://localhost:5000/demoForm', formData);
+      console.log(submittedData);
+      alert('Email has been submitted')
+    } catch (err) {
+      console.log(err);
+    }
+
   }
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();

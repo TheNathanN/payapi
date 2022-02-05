@@ -4,11 +4,17 @@ import db from '../utils/database';
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-  const { name, email, company, title, message } = req.body;
+  const { name, email, company, marketing, title, message } = req.body;
 
   try {
-    console.log(req.body);
-    const data = await db.addContact(name, email, company, title, message);
+    const data = await db.addContact(
+      name,
+      email,
+      company,
+      marketing,
+      title,
+      message
+    );
     res.status(201).send(data);
   } catch (err) {
     console.log(err);

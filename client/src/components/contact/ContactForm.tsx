@@ -6,7 +6,7 @@ interface FormData {
   name: string;
   email: string;
   company: string;
-  marketing: string;
+  marketing: boolean;
   title?: string;
   message?: string;
 }
@@ -17,10 +17,12 @@ const ContactForm = () => {
     name: '',
     email: '',
     company: '',
-    marketing: '',
+    marketing: false,
     title: undefined,
     message: undefined,
   });
+
+  const handleClick = () => setFormData({ ...formData, marketing: !formData.marketing });
 
   const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     e.preventDefault();
@@ -35,7 +37,7 @@ const ContactForm = () => {
     setSubmitting(true);
 
     try {
-      const submittedData = await axios.post('/contactForm', formData);
+      const submittedData = await axios.post('https://payapi-project.herokuapp.com/contactForm', formData);
       console.log(submittedData);
       alert('Form has been submitted');
     } catch (err) {
@@ -52,6 +54,7 @@ const ContactForm = () => {
       className='flex flex-col items-center justify-center w-full lg:pl-[10%]  '
     >
       <input
+        required
         type='text'
         placeholder='Name'
         name='name'
@@ -60,6 +63,7 @@ const ContactForm = () => {
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
       <input
+        required
         type='email'
         placeholder='Email Address'
         name='email'
@@ -68,6 +72,7 @@ const ContactForm = () => {
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
       <input
+        required
         type='text'
         placeholder='Company Name'
         name='company'
@@ -94,8 +99,8 @@ const ContactForm = () => {
       />
 
       <div className='flex items-center justify-start w-11/12 '>
-        <input name='marketing' value='checked' id='marketing' type='checkbox'
-          onChange={handleChange} className='opacity-0 w-6 h-6 absolute ' />
+        <input name='marketing' id='marketing' type='checkbox'
+          onClick={(handleClick)} className='opacity-0 w-6 h-6 absolute ' />
 
         <div className="w-6 h-6 bg-secBlue bg-opacity-30 mr-4 flex items-center justify-center ">
           <div className='hidden '>

@@ -23,7 +23,7 @@ interface Contacts {
     name: string,
     email: string,
     company: string,
-    marketing: string,
+    marketing: boolean,
     title?: string,
     message?: string
   ) => Promise<
