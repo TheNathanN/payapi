@@ -14,7 +14,7 @@ const SignupForm = () => {
     e.preventDefault();
 
     try {
-      const submittedData = await axios.post('http://localhost:5000/demoForm', formData);
+      const submittedData = await axios.post('https://payapi-project.herokuapp.com/demoForm', formData);
       console.log(submittedData);
       alert('Email has been submitted')
     } catch (err) {
