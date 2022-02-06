@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import HomeSignup from '../components/home/HomeSignup';
 import Experience from '../components/home/Experience';
 import Benefits from '../components/home/Benefits';
@@ -6,6 +7,9 @@ import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
   return (
     <div>
       <div className='flex items-center justify-center '>

@@ -13,7 +13,8 @@ const PageContainer = ({ children, title }: Props) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(toggle(false))
+    dispatch(toggle(false));
+    window.scrollTo(0, 0);
   }, [dispatch])
 
   return (

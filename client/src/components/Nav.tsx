@@ -26,9 +26,11 @@ const Nav = () => {
         </ul>
 
         <div className='hidden md:flex items-center justify-center lg:justify-end lg:w-2/4 '>
-          <button className='bg-primPink hover:bg-secPink transition-all text-center text-primWhite rounded-3xl text-sans font-semibold px-10 py-3 text-body my-2 '>
-            Schedule a Demo
-          </button>
+          <Link to='/'>
+            <button className='bg-primPink hover:bg-secPink transition-all text-center text-primWhite rounded-3xl text-sans font-semibold px-10 py-3 text-body my-2 '>
+              Schedule a Demo
+            </button>
+          </Link>
         </div>
 
         <div onClick={() => dispatch(toggle(true))} className='md:hidden '>

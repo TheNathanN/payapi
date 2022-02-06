@@ -6,6 +6,7 @@ interface FormData {
 }
 
 const SignupForm = () => {
+  const [inputValue, setInputValue] = useState('');
   const [formData, setFormData] = useState<FormData>({
     email: ''
   });
@@ -14,16 +15,18 @@ const SignupForm = () => {
     e.preventDefault();
 
     try {
-      const submittedData = await axios.post('https://payapi-project.herokuapp.com/demoForm', formData);
-      console.log(submittedData);
+      const response = await axios.post(`${process.env.REACT_APP_SERVER}/demoForm`, formData);
+      console.log(response);
       alert('Email has been submitted')
     } catch (err) {
       console.log(err);
     }
 
+    setInputValue('');
   }
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
+    setInputValue(e.currentTarget.value)
     setFormData({
       ...formData,
       [e.currentTarget.name]: e.currentTarget.value
@@ -40,6 +43,7 @@ const SignupForm = () => {
           type='email'
           placeholder='Enter email address'
           name='email'
+          value={inputValue}
           onChange={changeHandler}
           className='focus:outline-none py-2 px-6 rounded-3xl text-sans font-bold text-body text-secBlue placeholder-secLightBlue placeholder-opacity-50 mb-2 shadow-md w-full  '
         />

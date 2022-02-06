@@ -10,6 +10,7 @@ module.exports = {
       secLightBlue: '#6c8294',
       bgGreen: '#EDF3F8',
       bgGrey: '#979797',
+      red: '#ff0000',
     },
     fontFamily: {
       serif: ['DM Serif Display', 'serif'],

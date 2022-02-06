@@ -18,11 +18,9 @@ const ContactForm = () => {
     email: '',
     company: '',
     marketing: false,
-    title: undefined,
-    message: undefined,
+    title: '',
+    message: '',
   });
-
-  const handleClick = () => setFormData({ ...formData, marketing: !formData.marketing });
 
   const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     e.preventDefault();
@@ -32,23 +30,38 @@ const ContactForm = () => {
     });
   }
 
+  const handleCheckbox = () => {
+    setFormData({
+      ...formData,
+      marketing: !formData.marketing
+    });
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
 
     try {
-      const submittedData = await axios.post('https://payapi-project.herokuapp.com/contactForm', formData);
-      console.log(submittedData);
+      const response = await axios.post(`${process.env.REACT_APP_SERVER}/contactForm`, formData);
+      console.log(formData);
+      console.log(response);
       alert('Form has been submitted');
     } catch (err) {
       console.log(err);
     }
 
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      marketing: false,
+      title: '',
+      message: '',
+    })
     setSubmitting(false);
   }
 
   return (
-
     <form
       onSubmit={handleSubmit}
       className='flex flex-col items-center justify-center w-full lg:pl-[10%]  '
@@ -56,35 +69,39 @@ const ContactForm = () => {
       <input
         required
         type='text'
-        placeholder='Name'
+        placeholder='Name*'
         name='name'
         id='name'
+        value={formData.name}
         onChange={handleChange}
-        className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
+        className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue focus:invalid:border-b-[#ff0000] focus:invalid:placeholder-[#ff0000] focus:invalid:placeholder-opacity-50 '
       />
       <input
         required
         type='email'
-        placeholder='Email Address'
+        placeholder='Email Address*'
         name='email'
         id='email'
+        value={formData.email}
         onChange={handleChange}
-        className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
+        className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue focus:invalid:border-b-red focus:invalid:placeholder-red focus:invalid:placeholder-opacity-50 '
       />
       <input
         required
         type='text'
-        placeholder='Company Name'
+        placeholder='Company Name*'
         name='company'
         id='company'
+        value={formData.company}
         onChange={handleChange}
-        className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
+        className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue focus:invalid:border-b-red focus:invalid:placeholder-red focus:invalid:placeholder-opacity-50 '
       />
       <input
         type='text'
         placeholder='Title'
         name='title'
         id='title'
+        value={formData.title}
         onChange={handleChange}
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
@@ -94,13 +111,14 @@ const ContactForm = () => {
         cols={30}
         rows={3}
         placeholder='Message'
+        value={formData.message}
         onChange={handleChange}
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
       />
 
       <div className='flex items-center justify-start w-11/12 '>
-        <input name='marketing' id='marketing' type='checkbox'
-          onClick={(handleClick)} className='opacity-0 w-6 h-6 absolute ' />
+        <input name='marketing' id='marketing' type='checkbox' onChange={handleCheckbox} checked={formData.marketing}
+          className='opacity-0 w-6 h-6 absolute ' />
 
         <div className="w-6 h-6 bg-secBlue bg-opacity-30 mr-4 flex items-center justify-center ">
           <div className='hidden '>
