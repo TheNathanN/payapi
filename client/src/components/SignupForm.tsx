@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAppDispatch } from '../app/hooks';
 import axios from 'axios';
-import { toggleSubmitting } from '../app/reduxSlices/formStatusSlice';
+import { setFormStatus, toggleSubmitting } from '../app/reduxSlices/formStatusSlice';
 
 interface FormData {
   email: string;
@@ -20,12 +20,12 @@ const SignupForm = () => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_SERVER}/demoForm`, formData);
       console.log(response);
-      alert('Email has been submitted')
+      dispatch(setFormStatus(true));
     } catch (err) {
       console.log(err);
+      dispatch(setFormStatus(false));
     }
 
-    dispatch(toggleSubmitting(false));
     setFormData({
       email: ''
     });

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import axios from 'axios';
 import CheckSVG from '../svg/CheckSVG'
-import { toggleSubmitting } from '../../app/reduxSlices/formStatusSlice';
+import { setFormStatus, toggleSubmitting } from '../../app/reduxSlices/formStatusSlice';
 
 interface FormData {
   name: string;
@@ -45,14 +45,13 @@ const ContactForm = () => {
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_SERVER}/contactForm`, formData);
-      console.log(formData);
       console.log(response);
-      alert('Form has been submitted');
+      dispatch(setFormStatus(true));
     } catch (err) {
       console.log(err);
+      dispatch(setFormStatus(false));
     }
 
-    dispatch(toggleSubmitting(false));
     setFormData({
       name: '',
       email: '',
@@ -120,7 +119,7 @@ const ContactForm = () => {
 
       <div className='flex items-center justify-start w-11/12 '>
         <input name='marketing' id='marketing' type='checkbox' onChange={handleCheckbox} checked={formData.marketing}
-          className='opacity-0 w-6 h-6 absolute ' />
+          className='opacity-0 w-6 h-6 absolute cursor-pointer ' />
 
         <div className="w-6 h-6 bg-secBlue bg-opacity-30 mr-4 flex items-center justify-center ">
           <div className='hidden '>
@@ -128,7 +127,7 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <label htmlFor='marketing' className='w-10/12 text-body  text-secBlue font-sans '>
+        <label htmlFor='marketing' className='w-10/12 text-body  text-secBlue font-sans cursor-pointer '>
           Stay up-to-date with company announcements and updates to our API
         </label>
       </div>

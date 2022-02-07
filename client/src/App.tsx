@@ -13,13 +13,15 @@ const App = () => {
   const formSubmitting = useAppSelector(state => state.formStatus.submitting);
 
   return (
-    <div>
+    <div className={formSubmitting
+      ? 'h-screen w-screen overflow-hidden relative md:h-full'
+      : 'min-h-screen relative overflow-hidden '}>
       {formSubmitting ? <FormStatusModal /> : ''}
       <div
         className={
           mobileNav
-            ? 'h-screen w-screen overflow-hidden bg-bgGreen relative md:h-full '
-            : 'bg-bgGreen min-h-screen relative overflow-hidden '
+            ? 'h-screen w-screen overflow-hidden relative bg-bgGreen md:h-full '
+            : 'bg-bgGreen '
         }
       >
         {mobileNav ? <MobileNav /> : ''}
