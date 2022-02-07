@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '../app/hooks';
-import { toggle } from '../app/reduxSlices/mobileNavSlice';
+import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 
@@ -13,7 +13,7 @@ const PageContainer = ({ children, title }: Props) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(toggle(false));
+    dispatch(toggleMobileNav(false));
     window.scrollTo(0, 0);
   }, [dispatch])
 

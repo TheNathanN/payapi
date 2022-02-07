@@ -1,35 +1,39 @@
 import React, { useState } from 'react';
+import { useAppDispatch } from '../app/hooks';
 import axios from 'axios';
+import { setFormStatus, toggleSubmitting } from '../app/reduxSlices/formStatusSlice';
 
 interface FormData {
   email: string;
 }
 
 const SignupForm = () => {
-  const [inputValue, setInputValue] = useState('');
+  const dispatch = useAppDispatch();
   const [formData, setFormData] = useState<FormData>({
     email: ''
   });
 
   const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
+    dispatch(toggleSubmitting(true));
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_SERVER}/demoForm`, formData);
       console.log(response);
-      alert('Email has been submitted')
+      dispatch(setFormStatus(true));
     } catch (err) {
       console.log(err);
+      dispatch(setFormStatus(false));
     }
 
-    setInputValue('');
+    setFormData({
+      email: ''
+    });
   }
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
-    setInputValue(e.currentTarget.value)
     setFormData({
-      ...formData,
-      [e.currentTarget.name]: e.currentTarget.value
+      email: e.currentTarget.value
     })
   }
 
@@ -43,7 +47,7 @@ const SignupForm = () => {
           type='email'
           placeholder='Enter email address'
           name='email'
-          value={inputValue}
+          value={formData.email}
           onChange={changeHandler}
           className='focus:outline-none py-2 px-6 rounded-3xl text-sans font-bold text-body text-secBlue placeholder-secLightBlue placeholder-opacity-50 mb-2 shadow-md w-full  '
         />

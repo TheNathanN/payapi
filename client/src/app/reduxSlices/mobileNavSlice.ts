@@ -12,12 +12,12 @@ export const mobileNavSlice = createSlice({
   name: 'mobileNav',
   initialState,
   reducers: {
-    toggle: (state, action: PayloadAction<boolean>) => {
+    toggleMobileNav: (state, action: PayloadAction<boolean>) => {
       state.openNav = action.payload;
     },
   },
 });
 
-export const { toggle } = mobileNavSlice.actions;
+export const { toggleMobileNav } = mobileNavSlice.actions;
 
 export default mobileNavSlice.reducer;

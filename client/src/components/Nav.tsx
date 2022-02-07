@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { logoGreen } from '../svg';
-import { toggle } from '../app/reduxSlices/mobileNavSlice';
+import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
 import { useAppDispatch } from '../app/hooks';
 
 const Nav = () => {
@@ -33,7 +33,7 @@ const Nav = () => {
           </Link>
         </div>
 
-        <div onClick={() => dispatch(toggle(true))} className='cursor-pointer md:hidden '>
+        <div onClick={() => dispatch(toggleMobileNav(true))} className='cursor-pointer md:hidden '>
           <img src='/assets/shared/mobile/menu.svg' alt='menu logo' />
         </div>
       </div>
