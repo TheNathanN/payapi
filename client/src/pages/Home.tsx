@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { useAppDispatch } from '../app/hooks';
+import { toggle } from '../app/reduxSlices/mobileNavSlice';
 import HomeSignup from '../components/home/HomeSignup';
 import Experience from '../components/home/Experience';
 import Benefits from '../components/home/Benefits';
@@ -7,9 +9,13 @@ import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 
 const Home = () => {
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
+    dispatch(toggle(false));
     window.scrollTo(0, 0);
-  }, [])
+  }, [dispatch])
+
   return (
     <div>
       <div className='flex items-center justify-center '>

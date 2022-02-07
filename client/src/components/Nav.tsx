@@ -33,7 +33,7 @@ const Nav = () => {
           </Link>
         </div>
 
-        <div onClick={() => dispatch(toggle(true))} className='md:hidden '>
+        <div onClick={() => dispatch(toggle(true))} className='cursor-pointer md:hidden '>
           <img src='/assets/shared/mobile/menu.svg' alt='menu logo' />
         </div>
       </div>
