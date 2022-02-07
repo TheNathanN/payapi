@@ -22,7 +22,7 @@ const Experience = () => {
         </div>
 
         {/* Experience Card for both Layouts */}
-        <div className='px-4 lg:w-[40%] '>
+        <div className='px-4 z-10 lg:w-[40%] '>
           <ExperienceCard title={experience.title} info={experience.info} />
           <AboutBtn />
         </div>

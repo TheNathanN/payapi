@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useAppDispatch } from '../../app/hooks';
 import axios from 'axios';
 import CheckSVG from '../svg/CheckSVG'
+import { toggleSubmitting } from '../../app/reduxSlices/formStatusSlice';
 
 interface FormData {
   name: string;
@@ -12,7 +14,7 @@ interface FormData {
 }
 
 const ContactForm = () => {
-  const [submitting, setSubmitting] = useState(false);
+  const dispatch = useAppDispatch();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -39,7 +41,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
+    dispatch(toggleSubmitting(true));
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_SERVER}/contactForm`, formData);
@@ -50,6 +52,7 @@ const ContactForm = () => {
       console.log(err);
     }
 
+    dispatch(toggleSubmitting(false));
     setFormData({
       name: '',
       email: '',
@@ -58,7 +61,6 @@ const ContactForm = () => {
       title: '',
       message: '',
     })
-    setSubmitting(false);
   }
 
   return (
@@ -139,8 +141,6 @@ const ContactForm = () => {
           Submit
         </button>
       </div>
-
-      {submitting && <div>Submitting Form...</div>}
     </form>
 
   );

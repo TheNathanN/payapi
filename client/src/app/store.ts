@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import mobileNavReducer from './reduxSlices/mobileNavSlice';
+import formStatusReducer from './reduxSlices/formStatusSlice';
 
 export const store = configureStore({
   reducer: {
     mobileNav: mobileNavReducer,
+    formStatus: formStatusReducer,
   },
 });
 

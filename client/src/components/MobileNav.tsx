@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../app/hooks';
-import { toggle } from '../app/reduxSlices/mobileNavSlice';
+import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
 
 const MobileNav = () => {
   const dispatch = useAppDispatch()
@@ -9,7 +9,7 @@ const MobileNav = () => {
     <div className='bg-secDarkBlue min-h-screen w-10/12 absolute z-20 right-0 py-4 px-4 md:hidden '>
       <div
         className='border-b-[1px] border-bgGrey flex justify-end py-4 mb-8 cursor-pointer '
-        onClick={() => dispatch(toggle(false))}
+        onClick={() => dispatch(toggleMobileNav(false))}
       >
         <img src='/assets/shared/mobile/close.svg' alt='close icon' />
       </div>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '../app/hooks';
-import { toggle } from '../app/reduxSlices/mobileNavSlice';
+import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
 import HomeSignup from '../components/home/HomeSignup';
 import Experience from '../components/home/Experience';
 import Benefits from '../components/home/Benefits';
@@ -12,7 +12,7 @@ const Home = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(toggle(false));
+    dispatch(toggleMobileNav(false));
     window.scrollTo(0, 0);
   }, [dispatch])
 

@@ -6,25 +6,30 @@ import Pricing from './pages/Pricing';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import MobileNav from './components/MobileNav';
+import FormStatusModal from './components/FormStatusModal';
 
 const App = () => {
   const mobileNav = useAppSelector(state => state.mobileNav.openNav);
+  const formSubmitting = useAppSelector(state => state.formStatus.submitting);
 
   return (
-    <div
-      className={
-        mobileNav
-          ? 'h-screen w-screen overflow-hidden bg-bgGreen relative md:h-full '
-          : 'bg-bgGreen min-h-screen relative overflow-hidden '
-      }
-    >
-      {mobileNav ? <MobileNav /> : ''}
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/pricing' element={<Pricing />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-      </Routes>
+    <div>
+      {formSubmitting ? <FormStatusModal /> : ''}
+      <div
+        className={
+          mobileNav
+            ? 'h-screen w-screen overflow-hidden bg-bgGreen relative md:h-full '
+            : 'bg-bgGreen min-h-screen relative overflow-hidden '
+        }
+      >
+        {mobileNav ? <MobileNav /> : ''}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/pricing' element={<Pricing />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+      </div>
     </div>
   );
 };
