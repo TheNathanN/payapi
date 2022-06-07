@@ -108,10 +108,10 @@ const ContactForm = () => {
       />
       <textarea
         name='message'
+        placeholder='Message'
         id='message'
         cols={30}
         rows={3}
-        placeholder='Message'
         value={formData.message}
         onChange={handleChange}
         className='placeholder-secBlue placeholder-opacity-50 bg-bgGreen border-b-[1px] border-b-secBlue border-opacity-50 w-11/12 text-body text-secBlue pb-3 px-4 mb-6 focus:outline-none focus:border-opacity-100 autofill:bg-bgGreen autofill:text-secBlue '
