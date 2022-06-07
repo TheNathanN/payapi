@@ -29,7 +29,9 @@ Users should be able to:
 
 ### Built with
 
+- [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/) - JS library
+- [Express.js](https://expressjs.com/) - Server
 - [Tailwind CSS](https://tailwindcss.com/) - For styles
 - [MySQL](https://www.mysql.com/) - Database
 - [Framer Motion](https://www.framer.com/) - Animations
