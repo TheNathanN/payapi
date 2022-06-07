@@ -4,8 +4,8 @@
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Link](#link)
   - [Built with](#built-with)
+  - [Link](#link)
 
 ## Overview
 
@@ -18,10 +18,6 @@ Users should be able to:
 - Receive an error message when the contact form is submitted if:
   - The `Name`, `Email Address` or `Message` fields are empty should show "This field can't be empty"
   - The `Email Address` is not formatted correctly should show "Please use a valid email address"
-
-### Link
-
-- Live Site URL: [https://payapi-project.vercel.app/](https://payapi-project.vercel.app/)
 
 ## My process
 
@@ -37,3 +33,7 @@ Users should be able to:
 - Redux
 - Mobile-first workflow
 - Flexbox
+
+### Link
+
+- Live Site URL: [https://payapi-project.vercel.app/](https://payapi-project.vercel.app/)
