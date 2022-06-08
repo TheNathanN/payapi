@@ -5,6 +5,18 @@ const defaultTransition = {
   ease: defaultEase,
 };
 
+export const fadeIn = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: defaultDuration,
+    },
+  },
+};
+
 export const fadeInLeft = {
   hidden: {
     opacity: 0,

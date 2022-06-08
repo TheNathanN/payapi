@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { fadeInRight } from '../../app/animations';
+import { fadeIn } from '../../app/animations';
 import SignupDesktop from './desktop/SignupDesktop';
 import SignupTabMob from './tablet-mobile/SignupTabMob';
 
@@ -22,7 +22,7 @@ const HomeSignup = () => {
         <motion.img
           initial='hidden'
           animate='visible'
-          variants={fadeInRight}
+          variants={fadeIn}
           src='/assets/home/desktop/illustration-phone-mockup.svg'
           alt='phone mockup'
           className='w-52 md:w-60 lg:w-80 '

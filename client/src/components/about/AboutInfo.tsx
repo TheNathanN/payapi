@@ -1,10 +1,12 @@
+import { motion } from 'framer-motion';
+import { fadeInUp } from '../../app/animations';
 import { ourAboutInfo, theAboutInfo, stats } from '../../app/companyData';
 import AboutCard from './AboutCard';
 import StatsCard from './StatsCard';
 
 const AboutInfo = () => {
   return (
-    <section>
+    <motion.section variants={fadeInUp} initial='hidden' animate='visible'>
       {ourAboutInfo.map(data => (
         <AboutCard
           title={data.title}
@@ -48,7 +50,7 @@ const AboutInfo = () => {
           key={theAboutInfo.indexOf(data) + 5}
         />
       ))}
-    </section>
+    </motion.section>
   );
 };
 

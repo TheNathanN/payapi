@@ -9,7 +9,7 @@ import ExperienceCard from './ExperienceCard';
 const Experience = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.1,
+    threshold: 0.25,
   });
 
   useEffect(() => {
