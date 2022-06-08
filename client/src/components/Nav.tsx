@@ -3,15 +3,16 @@ import { motion } from 'framer-motion';
 import { logoGreen } from '../svg';
 import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
 import { useAppDispatch } from '../app/hooks';
+import { fadeInDown } from '../app/animations';
 
 const Nav = () => {
   const dispatch = useAppDispatch();
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: 'easeOut' }}
+      initial='hidden'
+      animate='visible'
+      variants={fadeInDown}
       className='md:mx-2 w-full max-w-[1440px] relative z-10 '
     >
       <div className='flex justify-between items-center pt-9 px-5 relative lg:px-[10%] '>

@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { fadeInUp, fadeInLeft } from '../../app/animations';
 import { useAppDispatch } from '../../app/hooks';
+import {
+  setFormStatus,
+  toggleSubmitting,
+} from '../../app/reduxSlices/formStatusSlice';
 import axios from 'axios';
-import CheckSVG from '../svg/CheckSVG'
-import { setFormStatus, toggleSubmitting } from '../../app/reduxSlices/formStatusSlice';
+import CheckSVG from '../svg/CheckSVG';
 
 interface FormData {
   name: string;
@@ -24,27 +29,32 @@ const ContactForm = () => {
     message: '',
   });
 
-  const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     e.preventDefault();
     setFormData({
       ...formData,
-      [e.currentTarget.name]: e.currentTarget.value
+      [e.currentTarget.name]: e.currentTarget.value,
     });
-  }
+  };
 
   const handleCheckbox = () => {
     setFormData({
       ...formData,
-      marketing: !formData.marketing
+      marketing: !formData.marketing,
     });
-  }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(toggleSubmitting(true));
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_SERVER}/contactForm`, formData);
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER}/contactForm`,
+        formData
+      );
       console.log(response);
       dispatch(setFormStatus(true));
     } catch (err) {
@@ -59,11 +69,14 @@ const ContactForm = () => {
       marketing: false,
       title: '',
       message: '',
-    })
-  }
+    });
+  };
 
   return (
-    <form
+    <motion.form
+      variants={fadeInLeft}
+      initial='hidden'
+      animate='visible'
       onSubmit={handleSubmit}
       className='flex flex-col items-center justify-center w-full lg:pl-[10%]  '
     >
@@ -118,16 +131,25 @@ const ContactForm = () => {
       />
 
       <div className='flex items-center justify-start w-11/12 '>
-        <input name='marketing' id='marketing' type='checkbox' onChange={handleCheckbox} checked={formData.marketing}
-          className='opacity-0 w-6 h-6 absolute cursor-pointer ' />
+        <input
+          name='marketing'
+          id='marketing'
+          type='checkbox'
+          onChange={handleCheckbox}
+          checked={formData.marketing}
+          className='opacity-0 w-6 h-6 absolute cursor-pointer '
+        />
 
-        <div className="w-6 h-6 bg-secBlue bg-opacity-30 mr-4 flex items-center justify-center ">
+        <div className='w-6 h-6 bg-secBlue bg-opacity-30 mr-4 flex items-center justify-center '>
           <div className='hidden '>
             <CheckSVG color='white' />
           </div>
         </div>
 
-        <label htmlFor='marketing' className='w-10/12 text-body  text-secBlue font-sans cursor-pointer '>
+        <label
+          htmlFor='marketing'
+          className='w-10/12 text-body  text-secBlue font-sans cursor-pointer '
+        >
           Stay up-to-date with company announcements and updates to our API
         </label>
       </div>
@@ -140,8 +162,7 @@ const ContactForm = () => {
           Submit
         </button>
       </div>
-    </form>
-
+    </motion.form>
   );
 };
 

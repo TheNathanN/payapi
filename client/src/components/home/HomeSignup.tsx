@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { fadeInRight } from '../../app/animations';
 import SignupDesktop from './desktop/SignupDesktop';
 import SignupTabMob from './tablet-mobile/SignupTabMob';
 
@@ -19,9 +20,9 @@ const HomeSignup = () => {
       {/* Phone SVG */}
       <div className='relative flex justify-center items-center pl-9 pt-6 lg:pl-0 lg:pt-0 lg:w-2/5 '>
         <motion.img
-          initial={{ x: 200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 1, ease: 'easeOut' }}
+          initial='hidden'
+          animate='visible'
+          variants={fadeInRight}
           src='/assets/home/desktop/illustration-phone-mockup.svg'
           alt='phone mockup'
           className='w-52 md:w-60 lg:w-80 '

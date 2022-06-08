@@ -35,7 +35,7 @@ const App = () => {
               initial={{ x: '100vw' }}
               animate={{ x: 0 }}
               exit={{ x: '100vw' }}
-              transition={{ duration: 0.5, stiffness: 300 }}
+              transition={{ duration: 0.3, stiffness: 300, ease: 'easeOut' }}
               className='bg-secDarkBlue min-h-screen w-10/12 absolute z-20 right-0 py-4 px-4 md:hidden '
             >
               <MobileNav />

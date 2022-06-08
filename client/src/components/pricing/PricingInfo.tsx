@@ -1,21 +1,48 @@
+import { motion } from 'framer-motion';
+import { fadeInLeft } from '../../app/animations';
 import { checked, plans } from '../../app/companyData';
 import Feature from './Feature';
 import RequestBtn from './RequestBtn';
 
 const PricingInfo = () => {
+  const container = {
+    hidden: {
+      opacity: 1,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+        staggerDirection: 1,
+      },
+    },
+  };
+
   return (
     <section className='max-w-[1440px] '>
-      <div className='md:flex md:mx-4 md:mb-16 lg:m-0 lg:px-[10%] '>
-        {plans.map(plan => (
-          <div
-            key={plans.indexOf(plan)}
+      <motion.div
+        initial='hidden'
+        animate='visible'
+        variants={container}
+        className='md:flex md:mx-4 md:mb-16 lg:m-0 lg:px-[10%] '
+      >
+        {plans.map((plan, i) => (
+          <motion.div
+            initial='hidden'
+            animate='visible'
+            variants={fadeInLeft}
+            key={i}
             className='flex flex-col justify-center items-center text-center mb-8 px-4 w-full md:w-1/3 lg:text-left lg:mb-16 '
           >
-            <h3 className='font-serif text-h4 text-primPink w-full '>{plan.title}</h3>
+            <h3 className='font-serif text-h4 text-primPink w-full '>
+              {plan.title}
+            </h3>
             <p className='my-4 text-body text-secLightBlue font-sans font-thin '>
               {plan.description}
             </p>
-            <p className='font-serif text-secBlue text-h2 w-full '>{plan.price}</p>
+            <p className='font-serif text-secBlue text-h2 w-full '>
+              {plan.price}
+            </p>
             <ul className='border-y-[1px] border-secBlue border-opacity-40 my-4 py-4  w-full flex flex-col items-center lg:items-start '>
               {plan.features.map(feature => (
                 <li
@@ -38,9 +65,9 @@ const PricingInfo = () => {
             <div className='my-4 w-full lg:flex lg:items-start '>
               <RequestBtn />
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
