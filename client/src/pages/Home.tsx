@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '../app/hooks';
 import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
+import { motion } from 'framer-motion';
 import HomeSignup from '../components/home/HomeSignup';
 import Experience from '../components/home/Experience';
 import Benefits from '../components/home/Benefits';
@@ -14,13 +15,18 @@ const Home = () => {
   useEffect(() => {
     dispatch(toggleMobileNav(false));
     window.scrollTo(0, 0);
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <div>
-      <div className='flex items-center justify-center '>
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
+        className='flex items-center justify-center '
+      >
         <Nav />
-      </div>
+      </motion.div>
 
       <section className='flex items-center justify-center '>
         <HomeSignup />
@@ -41,7 +47,6 @@ const Home = () => {
       <div className='flex items-center justify-center '>
         <Footer />
       </div>
-
     </div>
   );
 };
