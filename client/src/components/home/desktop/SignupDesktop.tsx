@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { fadeInLeft } from '../../../app/animations';
+import { fadeInUp } from '../../../app/animations';
 import SignupForm from '../../SignupForm';
 
 const SignupDesktop = () => {
   return (
     <div className='hidden lg:flex items-start justify-center flex-col w-3/5 px-[10%]  '>
       <motion.h2
-        variants={fadeInLeft}
+        variants={fadeInUp}
         initial='hidden'
         animate='visible'
         className='font-serif text-h1lg text-left text-secBlue max-w-md '
@@ -16,7 +16,7 @@ const SignupDesktop = () => {
       </motion.h2>
 
       <motion.div
-        variants={fadeInLeft}
+        variants={fadeInUp}
         initial='hidden'
         animate='visible'
         className='w-full pt-8 max-w-md '
