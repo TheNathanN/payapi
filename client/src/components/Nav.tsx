@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { logoGreen } from '../svg';
 import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
 import { useAppDispatch } from '../app/hooks';
@@ -7,7 +8,12 @@ const Nav = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <nav className='md:mx-2 w-full max-w-[1440px] relative z-10 '>
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1, ease: 'easeOut' }}
+      className='md:mx-2 w-full max-w-[1440px] relative z-10 '
+    >
       <div className='flex justify-between items-center pt-9 px-5 relative lg:px-[10%] '>
         <div>
           <Link to='/'>{logoGreen}</Link>
@@ -33,11 +39,14 @@ const Nav = () => {
           </Link>
         </div>
 
-        <div onClick={() => dispatch(toggleMobileNav(true))} className='cursor-pointer md:hidden '>
+        <div
+          onClick={() => dispatch(toggleMobileNav(true))}
+          className='cursor-pointer md:hidden '
+        >
           <img src='/assets/shared/mobile/menu.svg' alt='menu logo' />
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

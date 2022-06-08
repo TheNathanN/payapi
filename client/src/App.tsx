@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useAppSelector } from './app/hooks';
+import { motion, AnimatePresence } from 'framer-motion';
 // Pages
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
@@ -28,7 +29,21 @@ const App = () => {
             : 'bg-bgGreen '
         }
       >
-        {mobileNav ? <MobileNav /> : ''}
+        <AnimatePresence>
+          {mobileNav ? (
+            <motion.div
+              initial={{ x: '100vw' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100vw' }}
+              transition={{ duration: 0.5, stiffness: 300 }}
+              className='bg-secDarkBlue min-h-screen w-10/12 absolute z-20 right-0 py-4 px-4 md:hidden '
+            >
+              <MobileNav />
+            </motion.div>
+          ) : (
+            ''
+          )}
+        </AnimatePresence>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/pricing' element={<Pricing />} />

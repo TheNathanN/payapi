@@ -3,10 +3,10 @@ import { useAppDispatch } from '../app/hooks';
 import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
 
 const MobileNav = () => {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   return (
-    <div className='bg-secDarkBlue min-h-screen w-10/12 absolute z-20 right-0 py-4 px-4 md:hidden '>
+    <>
       <div
         className='border-b-[1px] border-bgGrey flex justify-end py-4 mb-8 cursor-pointer '
         onClick={() => dispatch(toggleMobileNav(false))}
@@ -26,14 +26,14 @@ const MobileNav = () => {
         </li>
       </ul>
 
-      <div className='flex items-center justify-center'>
+      <div className='flex items-center justify-center '>
         <Link to='/'>
           <button className='bg-primPink hover:bg-secPink transition-all text-center text-primWhite rounded-3xl text-sans font-semibold px-12 py-2 text-body my-2 '>
             Schedule a Demo
           </button>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 
