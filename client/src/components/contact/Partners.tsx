@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
-import { fadeInRight } from '../../app/animations';
+import { fadeInUp } from '../../app/animations';
 import CompanyList from '../CompanyList';
 
 const Partners = () => {
@@ -20,7 +20,7 @@ const Partners = () => {
       ref={ref}
       className='w-full text-center mt-12 flex flex-col items-center max-w-xl mr-2'
     >
-      <motion.div variants={fadeInRight} initial='hidden' animate={controls}>
+      <motion.div variants={fadeInUp} initial='hidden' animate={controls}>
         <h2 className='font-serif font-thin text-secLightBlue text-h4 w-full mx-1'>
           Join the thousands of innovators already building with us
         </h2>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { fadeInUp, fadeInLeft } from '../../app/animations';
+import { fadeInUp } from '../../app/animations';
 import { useAppDispatch } from '../../app/hooks';
 import {
   setFormStatus,
@@ -74,7 +74,7 @@ const ContactForm = () => {
 
   return (
     <motion.form
-      variants={fadeInLeft}
+      variants={fadeInUp}
       initial='hidden'
       animate='visible'
       onSubmit={handleSubmit}

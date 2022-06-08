@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useAppDispatch } from '../app/hooks';
 import { toggleMobileNav } from '../app/reduxSlices/mobileNavSlice';
-import { fadeInLeft } from '../app/animations';
+import { fadeInUp } from '../app/animations';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 
@@ -32,7 +32,7 @@ const PageContainer = ({ children, title }: Props) => {
 
       <div className='w-full max-w-[1440px] flex flex-col items-center justify-center lg:items-start '>
         <motion.h1
-          variants={fadeInLeft}
+          variants={fadeInUp}
           initial='hidden'
           animate='visible'
           className='w-3/4 font-serif text-center text-h3lg text-secBlue my-8 px-4 md:text-h2 md:my-12 lg:px-[10%] lg:text-left '

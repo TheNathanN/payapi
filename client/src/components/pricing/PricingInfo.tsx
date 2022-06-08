@@ -1,36 +1,18 @@
 import { motion } from 'framer-motion';
-import { fadeInLeft } from '../../app/animations';
+import { fadeInUp } from '../../app/animations';
 import { checked, plans } from '../../app/companyData';
 import Feature from './Feature';
 import RequestBtn from './RequestBtn';
 
 const PricingInfo = () => {
-  const container = {
-    hidden: {
-      opacity: 1,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.5,
-        staggerDirection: 1,
-      },
-    },
-  };
-
   return (
     <section className='max-w-[1440px] '>
-      <motion.div
-        initial='hidden'
-        animate='visible'
-        variants={container}
-        className='md:flex md:mx-4 md:mb-16 lg:m-0 lg:px-[10%] '
-      >
+      <div className='md:flex md:mx-4 md:mb-16 lg:m-0 lg:px-[10%] '>
         {plans.map((plan, i) => (
           <motion.div
             initial='hidden'
             animate='visible'
-            variants={fadeInLeft}
+            variants={fadeInUp}
             key={i}
             className='flex flex-col justify-center items-center text-center mb-8 px-4 w-full md:w-1/3 lg:text-left lg:mb-16 '
           >
@@ -67,7 +49,7 @@ const PricingInfo = () => {
             </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };
