@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useAppDispatch } from '../app/hooks';
 import axios from 'axios';
-import { setFormStatus, toggleSubmitting } from '../app/reduxSlices/formStatusSlice';
+import {
+  setFormStatus,
+  toggleSubmitting,
+} from '../app/reduxSlices/formStatusSlice';
 
 interface FormData {
   email: string;
@@ -10,7 +13,7 @@ interface FormData {
 const SignupForm = () => {
   const dispatch = useAppDispatch();
   const [formData, setFormData] = useState<FormData>({
-    email: ''
+    email: '',
   });
 
   const submitHandler = async (e: React.FormEvent) => {
@@ -18,7 +21,10 @@ const SignupForm = () => {
     dispatch(toggleSubmitting(true));
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_SERVER}/demoForm`, formData);
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER}/demoForm`,
+        formData
+      );
       console.log(response);
       dispatch(setFormStatus(true));
     } catch (err) {
@@ -27,15 +33,16 @@ const SignupForm = () => {
     }
 
     setFormData({
-      email: ''
+      email: '',
     });
-  }
+  };
+
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     setFormData({
-      email: e.currentTarget.value
-    })
-  }
+      email: e.currentTarget.value,
+    });
+  };
 
   return (
     <div className='w-full flex items-center justify-center '>
@@ -49,6 +56,7 @@ const SignupForm = () => {
           name='email'
           value={formData.email}
           onChange={changeHandler}
+          required
           className='focus:outline-none py-2 px-6 rounded-3xl text-sans font-bold text-body text-secBlue placeholder-secLightBlue placeholder-opacity-50 mb-2 shadow-md w-full  '
         />
         <button
