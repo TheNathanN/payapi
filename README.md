@@ -29,7 +29,6 @@ Users should be able to:
 - [Tailwind CSS](https://tailwindcss.com/) - For styles
 - [MySQL](https://www.mysql.com/) - Database
 - [Framer Motion](https://www.framer.com/) - Animations
-- [Jest](https://jestjs.io/) - Testing
 - Redux
 - Mobile-first workflow
 - Flexbox
